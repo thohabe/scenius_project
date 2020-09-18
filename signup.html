@@ -17,17 +17,28 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script>
+            function Function1 () {
+              var test = document.getElementById('group').value;
+              if (test == "Investor") {
+                location.href='investors.html';
+              } else if (test == "Entrepreneur") {
+                location.href='entrepreneurs.html';
+              } else {
+                alert("You don't have access right now");
+              }
+            }
+        </script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">SCENIIUS</a>
+                <a class="navbar-brand js-scroll-trigger" href="index.html">SCENIIUS</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <a class="btn btn-outline-primary btn-sm js-scroll-trigger" href="signup.html">Sign-up</a>
-                    </ul>
+                      </ul>
                 </div>
             </div>
         </nav>
@@ -41,9 +52,29 @@
                     </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 font-weight-light mb-5">Sceniius allows the world's most ambitious people to solve follow their passion and solve tough problems!</p>
-                        <a class="btn btn-primary btn-lg js-scroll-trigger" href="signup.html">I am an investor</a>
-                        &nbsp;
-                        <a class="btn btn-primary btn-lg js-scroll-trigger" href="signup.html">I am an entrepreneur</a>
+                        <form>
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                        <select class="form-control" id="group">
+                          <option>Entrepreneur</option>
+                          <option>Investor</option>
+                          <option>Neither</option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">I accept the T&C</label>
+                        </div>
+                        <a class="submit" class="btn btn-primary btn-lg" onclick="Function1()">Submit</a>
+                        </form>
                     </div>
                 </div>
             </div>
